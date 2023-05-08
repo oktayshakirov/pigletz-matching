@@ -89,4 +89,25 @@ section {
     transform: rotateY(180deg);
 }
 
+@media screen and (max-width: 600px) {
+  .card {
+    width: 90%;
+    height: 90%;
+  }
+
+  section {
+    grid-template-columns: repeat(4,4rem);
+    grid-template-rows: repeat(4,5rem);
+    grid-gap: 0rem;
+  }
+
+  header h1 {
+    font-size: 14px;
+  }
+  
+  header .playerLivesCount {
+    font-size: 15px;
+  }
+}
+
 
