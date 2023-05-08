@@ -62,7 +62,6 @@ header {
   
 
   section {
-    margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(4, 8rem);
     grid-template-rows: repeat(4, 8rem);
@@ -98,7 +97,7 @@ header {
 }
 
 .timer {
-  margin-top: 35px;
+  margin-top: 15px;
   font-weight: bold;
   font-size: 25px;
   color: #f1c40f;
