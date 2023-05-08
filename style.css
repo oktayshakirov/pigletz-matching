@@ -62,6 +62,7 @@ header {
   
 
   section {
+    margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(4, 8rem);
     grid-template-rows: repeat(4, 8rem);
@@ -94,6 +95,13 @@ header {
 
 .toggleCard {
     transform: rotateY(180deg);
+}
+
+.timer {
+  margin-top: 35px;
+  font-weight: bold;
+  font-size: 25px;
+  color: #f1c40f;
 }
 
 @media screen and (max-width: 600px) {

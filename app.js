@@ -36,7 +36,7 @@ const randomize = () => {
 //Mystery Box Generator
 const cardGenerator = () => {
     const cardData = randomize();
-    //Generate HTML
+//Generate HTML
     const cards = document.querySelectorAll(".card");
     cardData.forEach((item) => {
         const card = document.createElement("div");
@@ -84,36 +84,66 @@ const checkCards = (e) => {
             playerLives--;
             playerLivesCount.textContent = playerLives;
             if(playerLives === 0) {
-                restart("Oops! You used up all your lives. Try again and see if you can beat the game! 💪🐷");
+                restart("Oops! You used up all your lives. Try again! 💪🐷");
             }
         }
     }
+    
 // Run a check to see if game is won
     if(toggleCard.length === 16) {
         restart("Congratulations! You won the game! 🐷🎉");
     }
 };
 
+// Timer
+const startingTime = 100; // in seconds
+let remainingTime = startingTime;
+const timerDisplay = document.createElement("div");
+timerDisplay.classList = "timer";
+document.body.appendChild(timerDisplay);
+let countdown; 
+
+const startCountdown = () => {
+  countdown = setInterval(() => { 
+    remainingTime--;
+    timerDisplay.textContent = `Time left: ${remainingTime}s`;
+    if (remainingTime === 0) {
+      clearInterval(countdown);
+      restart("Time's up! You ran out of time. Try again and see if you can beat the game! 💪🐷");
+    }
+  }, 1000);
+};
+
+// Call the startCountdown function to start the timer
+startCountdown();
+
 //Restart
-    const restart = (text) => {
-    let cardData = randomize();
-    let faces = document.querySelectorAll(".face");
-    let cards = document.querySelectorAll(".card");
-    section.style.pointerEvents = "none";
-    cardData.forEach((item, index) => {
+const restart = (text) => {
+  let cardData = randomize();
+  let faces = document.querySelectorAll(".face");
+  let cards = document.querySelectorAll(".card");
+  section.style.pointerEvents = "none";
+  cardData.forEach((item, index) => {
     cards[index].classList.remove("toggleCard");
-    
-//Randomize
-        setTimeout(() => {
-            cards[index].style.pointerEvents = "all";
-            faces[index].src = item.imgSrc;
-            cards[index].setAttribute("name", item.name);
-            section.style.pointerEvents = "all";
-        },1000);
-    });
-    playerLives = 10;
-    playerLivesCount.textContent = playerLives;
-    setTimeout(() => window.alert(text), 100);
-    };
+
+    //Randomize
+    setTimeout(() => {
+      cards[index].style.pointerEvents = "all";
+      faces[index].src = item.imgSrc;
+      cards[index].setAttribute("name", item.name);
+      section.style.pointerEvents = "all";
+    }, 1000);
+  });
+  playerLives = 10;
+  playerLivesCount.textContent = playerLives;
+
+  // Reset the timer
+  remainingTime = startingTime;
+  clearInterval(countdown);
+  startCountdown();
+
+  // Show the restart message
+  alert(text);
+};
 
 cardGenerator();
