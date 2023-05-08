@@ -73,7 +73,7 @@ const checkCards = (e) => {
             console.log("match");
             flippedCards.forEach(card => {
                 card.classList.remove("flipped");
-                card.getElementsByClassName.pointerEvvents = "none";
+                card.style.pointerEvents = "none";
             })
         } else{
             console.log("wrong");
@@ -84,30 +84,31 @@ const checkCards = (e) => {
             playerLives--;
             playerLivesCount.textContent = playerLives;
             if(playerLives === 0) {
-                restart("you used all your lives, try again");
+                restart("Oops! You used up all your lives. Try again and see if you can beat the game! 💪🐷");
             }
         }
     }
 // Run a check to see if game is won
     if(toggleCard.length === 16) {
-        restart("awesome, you won");
+        restart("Congratulations! You won the game! 🐷🎉");
     }
 };
 
 //Restart
-const restart = (text) => {
+    const restart = (text) => {
     let cardData = randomize();
     let faces = document.querySelectorAll(".face");
     let cards = document.querySelectorAll(".card");
     section.style.pointerEvents = "none";
     cardData.forEach((item, index) => {
-        cards[index].classList.remove("toggleCard");
+    cards[index].classList.remove("toggleCard");
+    
 //Randomize
         setTimeout(() => {
-            cards[index].style.pointerEvvents = "all";
+            cards[index].style.pointerEvents = "all";
             faces[index].src = item.imgSrc;
             cards[index].setAttribute("name", item.name);
-            section.style.pointerEvvents = "all";
+            section.style.pointerEvents = "all";
         },1000);
     });
     playerLives = 10;

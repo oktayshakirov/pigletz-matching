@@ -6,9 +6,10 @@
 
 body {
     height: 100vh;
-    background: #ffb347;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffcc33, #ffb347);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffcc33, #ffb347); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: url( './images/background.svg' );
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +25,9 @@ header {
     justify-content: space-between;
     align-items: center;
     border-radius: 30px;
+    background: #f1c40f;
+
+
   
     /* Initial state of header */
     opacity: 0;
@@ -52,17 +56,19 @@ header {
   
   header .playerLivesCount {
     font-weight: bold;
-    font-size: 28px;
+    font-size: 25px;
+    color: #095a13;
   }
   
 
-section {
+  section {
     display: grid;
-    grid-template-columns: repeat(4,8rem);
-    grid-template-rows: repeat(4,8rem);
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: repeat(4, 8rem);
     grid-gap: 1rem;
     perspective: 800px;
 }
+  
 
 .card {
     position: relative;
@@ -76,6 +82,7 @@ section {
     height: 100%;
     position: absolute;
     pointer-events: none;
+    border-radius: 20px;
 }
 .face {
     transform: scaleX(-1);
@@ -90,6 +97,7 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+
   .card {
     width: 90%;
     height: 90%;
