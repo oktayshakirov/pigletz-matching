@@ -1,11 +1,10 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
+    height: 100%;
     background-image: url( './images/background.svg' );
     background-size: cover;
     background-position: center center;
@@ -18,13 +17,14 @@ body {
 header {
     box-shadow: 0px 2px 4px rgba(114, 112, 1, 0.918);
     padding: 15px;
-    margin-bottom: 40px;
-    width: 80%;
+    margin-bottom: 25px;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 30px;
     background: #f1c40f;
+    margin-top: 30px;
   
     /* Initial state of header */
     opacity: 0;
@@ -54,7 +54,7 @@ header {
   header .playerLivesCount {
     font-weight: bold;
     font-size: 25px;
-    color: #095a13;
+    color: #088516;
   }
   
 
@@ -93,17 +93,31 @@ header {
     transform: rotateY(180deg);
 }
 
-.timer {
-  padding: 6px;
-  border-radius: 18px;
-  margin-top: 25px;
-  font-weight: bold;
-  font-size: 20px;
-  background-color: #f1c40f;
-  color: #000000;
+@media screen and (max-width: 1150px) {
+
+  body {
+    height: 100vh;
+  }
+  
+  header h1 {
+    font-size: 17px;
+  }
+  
+  header .playerLivesCount {
+    font-size: 17px;
+  }
+
+  header {
+    width: 80%;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
+
+  body {
+    height: 100vh;
+  }
 
   .card {
     width: 90%;
@@ -116,11 +130,22 @@ header {
     grid-gap: 0rem;
   }
 
+  header {
+    margin-bottom: 55px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    background: #f1c40f;
+    margin-top: 30px;
+  }
+
   header h1 {
-    font-size: 14px;
+    font-size: 13px;
   }
   
   header .playerLivesCount {
-    font-size: 15px;
+    font-size: 13px;
   }
 }

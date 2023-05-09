@@ -104,15 +104,15 @@ document.body.appendChild(timerDisplay);
 let countdown; 
 
 const startCountdown = () => {
-  countdown = setInterval(() => { 
-    remainingTime--;
-    timerDisplay.textContent = `Time left: ${remainingTime}s`;
-    if (remainingTime === 0) {
-      clearInterval(countdown);
-      restart("Time's up! You ran out of time. Try again and see if you can beat the game! 💪🐷");
-    }
-  }, 1000);
-};
+    countdown = setInterval(() => { 
+      remainingTime--;
+      document.querySelector(".timer").textContent = `Time: ${remainingTime}s`;
+      if (remainingTime === 0) {
+        clearInterval(countdown);
+        restart("Time's up! You ran out of time. Try again and see if you can beat the game! 💪🐷");
+      }
+    }, 1000);
+  };
 
 // Call the startCountdown function to start the timer
 startCountdown();
