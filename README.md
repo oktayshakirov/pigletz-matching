@@ -9,7 +9,9 @@ The game restarts if all pairs are guessed, all lives are used or time is out.
 
 ![Desktop Demo](https://oktayshakirov.com/assets/images/projects/pigletz-matching.png "Desktop Demo")
 
-Also viewable [here](https://oktayshakirov.github.io/pigletz-matching)
+<p align="center">
+  <a href="https://oktayshakirov.github.io/pigletz-matching"><strong>➥ Live Demo</strong></a>
+</p>
 
 
 ## License
